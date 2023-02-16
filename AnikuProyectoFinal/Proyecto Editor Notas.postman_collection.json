@@ -1,0 +1,42 @@
+{
+	"info": {
+		"_postman_id": "acb5223c-2377-49e9-80d7-6fe20630630d",
+		"name": "Proyecto Editor Notas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24724493"
+	},
+	"item": [
+		{
+			"name": "Mostrar Notas",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Nota",
+			"request": {
+				"method": "POST",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Nota",
+			"request": {
+				"method": "PUT",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Borra Nota",
+			"request": {
+				"method": "DELETE",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
