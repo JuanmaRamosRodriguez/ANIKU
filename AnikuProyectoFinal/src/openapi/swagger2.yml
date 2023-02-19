@@ -1,0 +1,136 @@
+openapi: 3.0.1
+info:
+  title: ANIKU  PROYECTO FINAL
+  description: Esta api se encargará de recoger los datos de los usuarios que sean registrados.
+  version: 1.0.0
+servers:
+- url: https://api.moontravels/v1/clientes/
+tags:
+- name: usuarios
+  description: Este endpoint maneja toda la información relacionada con los usuarios. 
+  
+paths:
+  /:
+    post:
+      tags:
+      - usuarios
+      summary: Introducir nuevo usuario en la BBDD.
+      parameters:
+        $ref: '#/components/parameters/token'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BodyUsuariosPost'
+        required: true
+      responses:
+        200:
+          description: (Ta bien) La información ha sido guardada correctamente
+          content:
+            application/json: 
+              schema:
+                $ref:'#/component/schemas/ExitoUsuariosPost'
+        400:
+          $ref: '#/component/responses/BadRequest'
+        401:
+          $ref: '#/component/responses/Unauthorized'
+        404:
+          $ref: '#/component/responses/NotFound'
+        500:
+          $ref: '#/component/responses/ServerError'
+  /{idUser}:
+    get:
+      tags:
+        - clientes
+      summary: Obtiene la información de la base de datos de un usuario
+      parameters:
+      - $ref: '#/components/parameters/token'
+      - name: idUsuario
+        in: path
+        description: Identidicador del cliente
+        required: true
+        schema:
+          type: string
+        
+        respuestas: 
+        200: 
+          description: (Ta bien) la información del cliente se obtuvo correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExitoUsuariosGET'
+      
+          
+
+
+components:
+  responses:
+    Unauthorized:
+      description: (Unauthorized) no tienes autorización para este servicio
+      
+    NotFound: 
+      description: (NotFound) no se ha encontrado la información
+      
+    BadRequest:
+      description: (BadRequest) los datos enviados son incorrectos o hay datos requeridos no enviados
+      
+    ServerError:
+      description: Error en el servidor
+  
+  parameters:
+    token:
+      in: header
+      description: token de autentificación
+      required: true
+    
+  schemas:
+    BodyUsuariosPost:
+      type: object
+      properties:
+        name:
+          type: String
+          description: Nombre del usuario
+        email:
+          type: String
+          description: Correo del usuario
+        password: 
+          type: String
+          description: Contraseña del usuario
+        phone:
+          type: int
+          description: Teléfono del usuario
+        dni:
+          type: int
+          description: DNI del usuario
+        
+        
+  ExitoUsuariosPost:
+    type: object
+    properties:
+      respuesta:
+        type: integer
+        enum: [1]
+        description: Pa indicar si se conectó al servidor correctamente
+        idUsuario:
+          type: integer
+          enum: [222]
+          description: El id de este usuario
+          
+  ExitoUsuariosGET:
+    type: object
+    properties:
+      name:
+        type: String
+        description: Nombre del usuario
+      email:
+        type: String
+        description: Correo del usuario
+      password: 
+        type: String
+        description: Contraseña del usuario
+      phone:
+        type: int
+        description: Teléfono del usuario
+      dni:
+        type: int
+        description: DNI del usuario
