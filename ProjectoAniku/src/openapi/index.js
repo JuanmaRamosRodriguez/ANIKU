@@ -11,8 +11,8 @@ module.exports = {
   openapi: '3.0.3',
   info: {
     version: '0.0.1',
-    title: 'Editor Notas API',
-    description: 'RESTFull API para editar las notas en la memoria',
+    title: 'Editor Usuarios ANIKU',
+    description: 'RESTFull API para editar los usuarios en la memoria',
     termsOfService: 'http://swagger.io/terms/',
   },
   servers: [{ url: 'http://localhost:3000/' }],

@@ -1,33 +1,45 @@
-Notes:
+Usuario:
   type: object
   properties:
-    results:
-      items:
-        type: object
-        properties:
-          nombre:
-            type: string
-          contenido:
-            type: string
-            format: int64
-PostNotes:
+    name:
+      type: string
+    email:
+      type: string
+    telephone:
+      type: number
+    password:
+      type: number
+          
+PostUsuario:
   type: object
   properties:
-    nombre:
+    name:
       type: string
-    contenido:
+    email:
       type: string
-      format: int64
-PutNote:
+    telephone:
+      type: number
+    password:
+      type: number
+PutUsuario:
   type: object
   properties:
-    nombre:
-      type: string
-    contenido:
-      type: string
-      format: int64
-DeleteNote:
+  name:
+    type: string
+  email:
+    type: string
+  telephone:
+    type: number
+  password:
+    type: number
+DeleteUsuario:
   type: object
   properties:
-    nombre:
-      type: string
+  name:
+    type: string
+  email:
+    type: string
+  telephone:
+    type: number
+  password:
+    type: number

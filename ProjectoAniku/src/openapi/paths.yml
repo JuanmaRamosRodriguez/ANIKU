@@ -1,33 +1,32 @@
-  "/notas":
+  "/usuarios":
     post:
       tags:
-      - notas
+      - usuarios
       summary: Crear usuario
-      description: Enviar los datos para crear tu usuario
+      description: Envía los datos para crear un usuario
       requestBody:
         description: Creación de usuario
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/PostNotes"
+              $ref: "#/components/schemas/Usuario"
       responses:
         201:
           description: Usuario creado correctamente
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Notes"
-  "/notas/{nombre}":
+                $ref: "#/components/schemas/Usuario"
+  "/usuarios/{nombre}":
     put:
       tags:
-      - notas
       - usuarios
       summary: Editar una usuario
       description: Edita un usuario ya creado
       parameters:
       - nombre: nombre
         in: path
-        description: Nombre de la nota
+        description: Nombre del usuario
         required: true
         schema:
           type: string
@@ -36,30 +35,30 @@
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/PutNote"
+              $ref: "#/components/schemas/PutUsuario"
       responses:
         201:
           description: Usuario modificado correctamente
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Notes"
+                $ref: "#/components/schemas/Usuarios"
     delete:
       tags:
-      - notas
+      - usuarios
       summary: Eliminar usuario
-      description: Eliminar las notas que quieras
+      description: Eliminar los usuarios que quieras
       parameters:
       - nombre: nombre
         in: path
-        description: Nombre de la nota
+        description: Nombre del usuario
         required: true
         schema:
           type: string
       responses:
         201:
-          description: Nota borrada correctamente
+          description: Usuario borrado correctamente
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/DeleteNote"
+                $ref: "#/components/schemas/DeleteUsuario"

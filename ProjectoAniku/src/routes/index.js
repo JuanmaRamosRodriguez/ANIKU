@@ -1,11 +1,11 @@
 const express = require('express');
 
 const { rootController } = require('../controllers');
-const notasRouter = require('./notas');
+const usuarioRouter = require('./usuario');
 
 const router = express.Router();
 
 router.post('/', rootController);
-router.use('/notas', notasRouter);
+router.use('/usuarios', usuarioRouter);
 
 module.exports = router;
