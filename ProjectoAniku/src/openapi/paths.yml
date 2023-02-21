@@ -1,0 +1,65 @@
+  "/notas":
+    post:
+      tags:
+      - notas
+      summary: Crear usuario
+      description: Enviar los datos para crear tu usuario
+      requestBody:
+        description: Creación de usuario
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PostNotes"
+      responses:
+        201:
+          description: Usuario creado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Notes"
+  "/notas/{nombre}":
+    put:
+      tags:
+      - notas
+      - usuarios
+      summary: Editar una usuario
+      description: Edita un usuario ya creado
+      parameters:
+      - nombre: nombre
+        in: path
+        description: Nombre de la nota
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Body para editar el usuario
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PutNote"
+      responses:
+        201:
+          description: Usuario modificado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Notes"
+    delete:
+      tags:
+      - notas
+      summary: Eliminar usuario
+      description: Eliminar las notas que quieras
+      parameters:
+      - nombre: nombre
+        in: path
+        description: Nombre de la nota
+        required: true
+        schema:
+          type: string
+      responses:
+        201:
+          description: Nota borrada correctamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DeleteNote"

@@ -1,0 +1,12 @@
+openapi: 3.0.3
+info:
+  version: 0.0.1
+  title: Mi editor de notas API
+  description: API RESTFul para notas del editor en la memoria
+  termsOfService: http://swagger.io/terms/
+servers:
+- url: http://localhost:3000/
+
+components:
+  schemas:
+    
