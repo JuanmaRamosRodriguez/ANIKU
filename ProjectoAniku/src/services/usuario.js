@@ -5,20 +5,18 @@ async function crearUsuario(user) {
   return new Usuario(user).save();
 }
 
-function editarNota(nombre, contenido) {
+function editarUsuario(nombre, contenido) {
   fs.writeFile(`${nombre}.note`, contenido, err => {
     if (err) throw err;
   });
 }
 
-function eliminarNota(nombre) {
-  fs.unlink(`${nombre}.note`, err => {
-    if (err) throw err;
-  });
+function eliminarUsuario(user) {
+  return new Usuario(user).remove();
 }
 
 module.exports = {
   crearUsuario,
-  editarNota,
-  eliminarNota,
+  editarUsuario,
+  eliminarUsuario,
 };
