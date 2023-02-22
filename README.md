@@ -21,6 +21,10 @@
 - Una página de información.
 
 <hr>
+
+## Base de Datos
+
+![FOTO](fotos/bbdd.png)
   
   
 ##### En cuanto a la finalidad de esta API, pues sería el fomento de buscar parejaas dentro de este mundo de otakus. Pues hoy en día cuesta 
