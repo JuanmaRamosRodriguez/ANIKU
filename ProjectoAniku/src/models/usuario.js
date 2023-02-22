@@ -4,7 +4,7 @@ const usuarioSchema = new Schema({
   name: { type: String, required: true },
   email: { type: String, unique: true, required: true },
   telephone: { type: Number, unique: true, required: true },
-  password: { type: String, unique: true, required: true },
+  password: { type: String, required: true },
 });
 
-module.exports = model('User', usuarioSchema);
+module.exports = model('Usuarios', usuarioSchema);

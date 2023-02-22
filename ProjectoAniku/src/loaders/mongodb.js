@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+mongoose.set('strictQuery', false);
+
 module.exports = async config => {
   const {
     user, pass, host, port, dbName,

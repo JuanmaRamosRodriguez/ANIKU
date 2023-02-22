@@ -11,7 +11,7 @@ module.exports = {
   openapi: '3.0.3',
   info: {
     version: '0.0.1',
-    title: 'Editor Usuarios ANIKU',
+    title: 'ANIKU',
     description: 'RESTFull API para editar los usuarios en la memoria',
     termsOfService: 'http://swagger.io/terms/',
   },

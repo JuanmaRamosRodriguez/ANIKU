@@ -8,7 +8,7 @@ Usuario:
     telephone:
       type: number
     password:
-      type: number
+      type: string
           
 PostUsuario:
   type: object
@@ -20,7 +20,7 @@ PostUsuario:
     telephone:
       type: number
     password:
-      type: number
+      type: string
 PutUsuario:
   type: object
   properties:
@@ -42,4 +42,4 @@ DeleteUsuario:
   telephone:
     type: number
   password:
-    type: number
+    type: string
