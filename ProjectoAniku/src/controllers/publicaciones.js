@@ -8,13 +8,9 @@ async function crearPublicacion(req, res) {
 }
 
 async function eliminarPublicacion(req, res) {
-  try {
-    const EliminarPublicacion = await publicacionServices.eliminarPublicacion(req.params.id);
-    return res.status(200).send(EliminarPublicacion);
-  } catch (error) {
-    console.error(`Error al eliminar usuario con ID ${req.params.id}: ${error}`);
-    return res.status(500).send('Error al eliminar usuario');
-  }
+  const { id } = req.params;
+  const EliminarPublicacion = await publicacionServices.eliminarPublicacion(id);
+  return res.status(200).send(EliminarPublicacion);
 }
 
 module.exports = {

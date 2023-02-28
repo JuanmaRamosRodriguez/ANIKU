@@ -14,8 +14,8 @@ async function editarUsuario(body) {
 
 async function eliminarUsuario(id) {
   const { identificador } = { id: id };
-  const eliminarusuario = await Usuario.deleteOne(identificador);
-  return eliminarusuario;
+  const EliminarUsuario = await Usuario.deleteOne(identificador);
+  return EliminarUsuario;
 }
 
 module.exports = {

@@ -5,8 +5,10 @@ async function crearPublicacion(publication) {
   return new Publicacion(publication).save();
 }
 
-function eliminarPublicacion(user) {
-  return new Publicacion(user).remove();
+async function eliminarPublicacion(id) {
+  const { identificador } = { id };
+  const EliminarPublicacion = await Publicacion.deleteOne(identificador);
+  return EliminarPublicacion;
 }
 
 module.exports = {
