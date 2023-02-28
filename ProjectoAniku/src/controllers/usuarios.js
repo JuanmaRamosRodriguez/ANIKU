@@ -1,4 +1,6 @@
+/* eslint-disable max-len */
 const fs = require('fs');
+const { Usuario } = require('../models');
 
 const usuarioServices = require('../services/usuario');
 
@@ -8,23 +10,14 @@ async function crearUsuario(req, res) {
 }
 
 async function editarUsuario(req, res) {
-  try {
-    const EditarUsuario = await usuarioServices.editarUsuario(req.params.id, req.body);
-    return res.status(200).send(EditarUsuario);
-  } catch (error) {
-    console.error(`Ha ocurrido un error al editar el usuario con ID ${req.params.id}: ${error}`);
-    return res.status(500).send('Ha ocurrido un error al editar el usuario');
-  }
+  const EditarUsuario = await usuarioServices.editarUsuario(req.body);
+  return res.status(200).send(EditarUsuario);
 }
 
 async function eliminarUsuario(req, res) {
-  try {
-    const EliminarUsuario = await usuarioServices.eliminarUsuario(req.params.id);
-    return res.status(200).send(EliminarUsuario);
-  } catch (error) {
-    console.error(`Error al eliminar usuario con ID ${req.params.id}: ${error}`);
-    return res.status(500).send('Error al eliminar usuario');
-  }
+  const { id } = req.params;
+  const EliminarUsuario = await usuarioServices.eliminarUsuario(id);
+  return res.status(200).send(EliminarUsuario);
 }
 
 module.exports = {
@@ -32,6 +25,3 @@ module.exports = {
   editarUsuario,
   eliminarUsuario,
 };
-
-/* Id CLIENTE:  1449171834-3gsrps9fi891j1c2a1afk2rdduclvg3r.apps.googleusercontent.com */
-/* Secreto del CLIENTE:  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 */

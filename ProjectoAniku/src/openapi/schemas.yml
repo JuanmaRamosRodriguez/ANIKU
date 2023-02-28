@@ -1,6 +1,8 @@
 Usuario:
   type: object
   properties:
+    id:
+      type: number
     name:
       type: string
     email:
@@ -8,38 +10,82 @@ Usuario:
     telephone:
       type: number
     password:
-      type: string
-          
-PostUsuario:
-  type: object
-  properties:
-    name:
-      type: string
-    email:
-      type: string
-    telephone:
-      type: number
-    password:
-      type: string
+      type: string   
 PutUsuario:
   type: object
   properties:
-  name:
-    type: string
-  email:
-    type: string
-  telephone:
-    type: number
-  password:
-    type: number
+    id:
+      type: number
+    name:
+      type: string
+    email:
+      type: string
+    telephone:
+      type: number
+    password:
+      type: string
+PostUsuario:
+  type: object
+  properties:
+    id:
+      type: number
+    name:
+      type: string
+    email:
+      type: string
+    telephone:
+      type: number
+    password:
+      type: string
 DeleteUsuario:
   type: object
   properties:
-  name:
-    type: string
-  email:
-    type: string
-  telephone:
-    type: number
-  password:
-    type: string
+    id:
+      type: number
+    name:
+      type: string
+    email:
+      type: string
+    telephone:
+      type: number
+    password:
+      type: string
+Publicacion:
+  type: object
+  properties:
+    id:
+      type: string
+    image:
+      type: string
+    description:
+      type: string
+    likes: 
+      type: number
+    comments:
+      type: string
+PostPublicacion:
+  type: object
+  properties:
+    id:
+      type: string
+    image: 
+      type: string
+    description:
+      type: string
+    likes:
+      type: number
+    comments:
+      type: string
+DeletePublicacion:
+  type: object
+  properties:
+    id:
+      type: string
+    image: 
+      type: string
+    description:
+      type: string
+    likes:
+      type: number
+    comments:
+      type: string
