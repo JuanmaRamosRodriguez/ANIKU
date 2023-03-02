@@ -1,17 +1,19 @@
 const fs = require('fs');
 const { Publicacion } = require('../models');
 
-async function crearPublicacion(publication) {
-  return new Publicacion(publication).save();
+async function createPublicacion(body) {
+  const createdPublicacion = await new Publicacion(body).save();
+  return createdPublicacion;
 }
 
 async function eliminarPublicacion(id) {
-  const { identificador } = { id };
-  const EliminarPublicacion = await Publicacion.deleteOne(identificador);
-  return EliminarPublicacion;
+  // eslint-disable-next-line object-shorthand
+  const identificador = { id };
+  const publicacionEliminada = await Publicacion.deleteOne(identificador);
+  return publicacionEliminada;
 }
 
 module.exports = {
-  crearPublicacion,
+  createPublicacion,
   eliminarPublicacion,
 };

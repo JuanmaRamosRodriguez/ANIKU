@@ -12,8 +12,7 @@ module.exports = {
   info: {
     version: '0.0.1',
     title: 'ANIKU',
-    description: 'RESTFull API para editar los usuarios en la memoria',
-    termsOfService: 'http://swagger.io/terms/',
+    description: 'Crea usuarios y súbe tus fotos',
   },
   servers: [{ url: 'http://localhost:3000/' }],
   paths: pathD,

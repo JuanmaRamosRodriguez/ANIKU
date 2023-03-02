@@ -1,9 +1,8 @@
 openapi: 3.0.3
 info:
   version: 0.0.1
-  title: Mi editor de usuarios ANIKU
-  description: API RESTFul para notas del editor en la memoria
-  termsOfService: http://swagger.io/terms/
+  title: ANIKU
+  description: API para crear usuarios y publicaciones
 servers:
 - url: http://localhost:3000/
 

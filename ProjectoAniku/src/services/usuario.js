@@ -13,8 +13,7 @@ async function editarUsuario(body) {
 }
 
 async function eliminarUsuario(id) {
-  const { identificador } = { id: id };
-  const EliminarUsuario = await Usuario.deleteOne(identificador);
+  const EliminarUsuario = await Usuario.deleteOne({ _id: id });
   return EliminarUsuario;
 }
 
