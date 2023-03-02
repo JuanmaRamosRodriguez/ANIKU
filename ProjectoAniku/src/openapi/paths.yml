@@ -73,7 +73,7 @@
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Publicacion"
+              $ref: "#/components/schemas/PostPublicacion"
       responses:
         201:
           description: Publicado con éxito
@@ -81,39 +81,22 @@
             application/json:
               schema:
                 $ref: "#/components/schemas/PostPublicacion"
-  
-
-
-#    delete:
-#      tags:
-#      - publicacion
-#      summary: Eliminar publicacion
-#      description: Eliminar la publicacion que quieras
-#      parameters:
-#      - name: telephone
-#        in: path
-#        description: Teléfono del usuario
-#        required: true
-#        schema:
-#          type: number
-#      responses:
-#        201:
-#          description: Publicacion borrada correctamente
-#          content:
-#            application/json:
-#              schema:
-#                $ref: "#/components/schemas/DeletePublicacion"
-
-#      - publicacion: id
-#        in: path
-#        description: Id de la publicacion que deseas eliminar
-#        required: trues
-#        schema:
-#          type: string
-#      responses:
-#        201:
-#          description: Has borrado la publicacion exitosamente
-#          content:
-#            application/json:
-#              schema:
-#                $ref: "#/components/schemas/DeletePublicacion"
+    delete:
+      tags:
+      - publicacion
+      summary: Eliminar publicacion
+      description: Eliminar la publicacion que quieras
+      parameters:
+      - name: telephone
+        in: path
+        description: Teléfono del usuario
+        required: true
+        schema:
+          type: number
+      responses:
+        201:
+          description: Publicacion borrada correctamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DeletePublicacion"

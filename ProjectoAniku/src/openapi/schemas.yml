@@ -50,19 +50,6 @@ DeleteUsuario:
       type: number
     password:
       type: string
-Publicacion:
-  type: object
-  properties:
-    id:
-      type: string
-    image:
-      type: string
-    description:
-      type: string
-    likes: 
-      type: number
-    comments:
-      type: string
 PostPublicacion:
   type: object
   properties:
