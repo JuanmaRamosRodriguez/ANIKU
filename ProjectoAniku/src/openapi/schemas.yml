@@ -1,6 +1,8 @@
 Usuario:
   type: object
   properties:
+    id:
+      type: number
     name:
       type: string
     email:
@@ -12,6 +14,8 @@ Usuario:
 PutUsuario:
   type: object
   properties:
+    id:
+      type: number
     name:
       type: string
     email:
@@ -23,6 +27,8 @@ PutUsuario:
 PostUsuario:
   type: object
   properties:
+    id:
+      type: number
     name:
       type: string
     email:
@@ -34,6 +40,8 @@ PostUsuario:
 DeleteUsuario:
   type: object
   properties:
+    id:
+      type: number
     name:
       type: string
     email:
@@ -42,20 +50,11 @@ DeleteUsuario:
       type: number
     password:
       type: string
-Publicacion:
-  type: object
-  properties:
-    image:
-      type: string
-    description:
-      type: string
-    likes: 
-      type: number
-    comments:
-      type: string
 PostPublicacion:
   type: object
   properties:
+    id:
+      type: string
     image: 
       type: string
     description:
@@ -67,6 +66,8 @@ PostPublicacion:
 DeletePublicacion:
   type: object
   properties:
+    id:
+      type: string
     image: 
       type: string
     description:

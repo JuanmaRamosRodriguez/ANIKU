@@ -3,7 +3,7 @@
       tags:
       - usuario
       summary: Crear usuario
-      description: Creación de un usuario
+      description: Envía los datos para crear un usuario
       requestBody:
         description: Creación de usuario
         content:
@@ -12,7 +12,7 @@
               $ref: "#/components/schemas/Usuario"
       responses:
         201:
-          description: Usuario creado correctamente !
+          description: Usuario creado correctamente
           content:
             application/json:
               schema:
@@ -21,12 +21,12 @@
     put:
       tags:
       - usuario
-      summary: Editar usuario por su identificador
+      summary: Editar usuario por ID
       description: Edita un usuario creado
       parameters:
       - name: id
         in: path
-        description: Identificador del usuario que deseas modificar
+        description: Id del usuario
         required: true
         schema:
           type: string
@@ -46,18 +46,18 @@
     delete:
       tags:
       - usuario
-      summary: Eliminar usuario por su identificador
+      summary: Eliminar usuario
       description: Eliminar el usuario que quieras
       parameters:
       - name: id
         in: path
-        description: Identificador del usuario que deseas eliminar
+        description: Id del usuario que deseas eliminar
         required: trues
         schema:
-          type: string
+          type: number
       responses:
         201:
-          description: Usuario borrado correctamente !
+          description: Usuario borrado correctamente
           content:
             application/json:
               schema:
@@ -67,36 +67,35 @@
       tags:
       - publicacion
       summary: Crear publicación
-      description: Creación de tu publicación
+      description: Envía los datos para publicar 
       requestBody:
         description: Creación de publicación
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Publicacion"
+              $ref: "#/components/schemas/PostPublicacion"
       responses:
         201:
-          description: Publicado con éxito !
+          description: Publicado con éxito
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/PostPublicacion"
-  "/publicacion/{id}":
     delete:
       tags:
       - publicacion
       summary: Eliminar publicacion
       description: Eliminar la publicacion que quieras
       parameters:
-      - name: id
+      - name: telephone
         in: path
-        description: Identificador de la publicación
-        required: trues
+        description: Teléfono del usuario
+        required: true
         schema:
           type: number
       responses:
         201:
-          description: Publicacion borrada correctamente !
+          description: Publicacion borrada correctamente
           content:
             application/json:
               schema:
