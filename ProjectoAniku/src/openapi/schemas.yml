@@ -76,3 +76,7 @@ DeletePublicacion:
       type: number
     comments:
       type: string
+Upload:
+  type: object
+  properties:
+    image: string

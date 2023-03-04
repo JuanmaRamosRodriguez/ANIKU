@@ -1,8 +1,9 @@
 const fs = require('fs');
 const { Publicacion } = require('../models');
 
-async function createPublicacion(body) {
-  const createdPublicacion = await new Publicacion(body).save();
+async function createPublicacion(publicationData, archivo) {
+  const data = { ...publicationData, image: archivo.originalname };
+  const createdPublicacion = await Publicacion.create(data);
   return createdPublicacion;
 }
 

@@ -1,3 +1,4 @@
+const multer = require('multer');
 const server = require('./app');
 const config = require('./config');
 const { logger } = require('./utils');

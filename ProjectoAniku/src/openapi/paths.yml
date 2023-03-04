@@ -17,6 +17,24 @@
             application/json:
               schema:
                 $ref: "#/components/schemas/PostUsuario"
+    get:
+      tags:
+      - usuario
+      summary: Todos los usuarios
+      description: Lista con todos los usuarios existentes.
+      requestBody:
+        description: Lista de usuarios
+        content:
+          application/json:
+            schema: 
+              $ref: "#/components/schemas/Usuario"
+      responses:
+        201:
+          description: Lista mostrada correctamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Usuario'
   "/usuarios/{id}":
     put:
       tags:
@@ -100,3 +118,23 @@
             application/json:
               schema:
                 $ref: "#/components/schemas/DeletePublicacion"
+  /upload:
+    post:
+      summary: Carga tu imagen
+      requestBody:
+        required: trues
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                image:
+                  type: string
+                  format: binary
+      responses:
+        201:
+          description: Imagen subida correctamente
+          content:
+            multipart/form-data:
+              schema:
+                $ref: "#/components/schemas/Upload"

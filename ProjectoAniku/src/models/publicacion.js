@@ -1,10 +1,10 @@
 const { Schema, model } = require('mongoose');
 
 const publicacionSchema = new Schema({
-  image: { type: String, required: true },
+  image: { type: String },
   description: { type: String, required: true },
-  likes: { type: Number, required: true, default: 0 },
-  comments: { type: String, required: true },
+  likes: { type: Number, required: true },
+  comments: { type: String },
 });
 
 module.exports = model('Publicaciones', publicacionSchema);

@@ -3,7 +3,8 @@ const fs = require('fs');
 const publicacionServices = require('../services/publicacion');
 
 async function crearPublicacion(req, res) {
-  const CrearPublicacion = await publicacionServices.createPublicacion(req.body);
+  const archivo = req.file;
+  const CrearPublicacion = await publicacionServices.createPublicacion(req.body, archivo);
   return res.status(201).send(CrearPublicacion);
 }
 
