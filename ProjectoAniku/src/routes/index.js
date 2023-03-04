@@ -8,6 +8,6 @@ const router = express.Router();
 
 router.post('/', rootController);
 router.use('/usuarios', usuarioRouter);
-router.use('/fotos', fotosRouter);
+router.use('/fotos', express.static('fotos'), fotosRouter);
 
 module.exports = router;

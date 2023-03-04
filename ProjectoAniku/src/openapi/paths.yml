@@ -17,24 +17,6 @@
             application/json:
               schema:
                 $ref: "#/components/schemas/PostUsuario"
-    get:
-      tags:
-      - usuario
-      summary: Todos los usuarios
-      description: Lista con todos los usuarios existentes.
-      requestBody:
-        description: Lista de usuarios
-        content:
-          application/json:
-            schema: 
-              $ref: "#/components/schemas/Usuario"
-      responses:
-        201:
-          description: Lista mostrada correctamente
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Usuario'
   "/usuarios/{id}":
     put:
       tags:
@@ -45,7 +27,7 @@
       - name: id
         in: path
         description: Id del usuario
-        required: true
+        required: trues
         schema:
           type: string
       requestBody:
@@ -80,7 +62,7 @@
             application/json:
               schema:
                 $ref: "#/components/schemas/DeleteUsuario"
-  "/publicacion":
+  "/publicacion/{_id}":
     post:
       tags:
       - publicacion
@@ -105,12 +87,12 @@
       summary: Eliminar publicacion
       description: Eliminar la publicacion que quieras
       parameters:
-      - name: telephone
+      - name: id
         in: path
-        description: Teléfono del usuario
-        required: true
+        description: Id de la foto subida
+        required: trues
         schema:
-          type: number
+          type: string
       responses:
         201:
           description: Publicacion borrada correctamente
