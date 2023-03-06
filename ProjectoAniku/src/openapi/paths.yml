@@ -27,7 +27,7 @@
       - name: id
         in: path
         description: Id del usuario
-        required: trues
+        required: true
         schema:
           type: string
       requestBody:
@@ -52,9 +52,7 @@
       - name: id
         in: path
         description: Id del usuario que deseas eliminar
-        required: trues
-        schema:
-          type: number
+        required: true
       responses:
         201:
           description: Usuario borrado correctamente
@@ -87,10 +85,10 @@
       summary: Eliminar publicacion
       description: Eliminar la publicacion que quieras
       parameters:
-      - name: id
+      - name: _id
         in: path
         description: Id de la foto subida
-        required: trues
+        required: true
         schema:
           type: string
       responses:
@@ -104,7 +102,7 @@
     post:
       summary: Carga tu imagen
       requestBody:
-        required: trues
+        required: true
         content:
           multipart/form-data:
             schema:

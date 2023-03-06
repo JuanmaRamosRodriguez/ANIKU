@@ -1,8 +1,6 @@
 Usuario:
   type: object
   properties:
-    id:
-      type: number
     name:
       type: string
     email:
@@ -14,8 +12,6 @@ Usuario:
 PutUsuario:
   type: object
   properties:
-    id:
-      type: number
     name:
       type: string
     email:
@@ -27,8 +23,6 @@ PutUsuario:
 PostUsuario:
   type: object
   properties:
-    id:
-      type: number
     name:
       type: string
     email:
@@ -40,8 +34,6 @@ PostUsuario:
 DeleteUsuario:
   type: object
   properties:
-    id:
-      type: number
     name:
       type: string
     email:
@@ -64,8 +56,6 @@ PostPublicacion:
 DeletePublicacion:
   type: object
   properties:
-    id:
-      type: string
     image: 
       type: string
     description:

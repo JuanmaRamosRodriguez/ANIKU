@@ -1,4 +1,5 @@
 /* eslint-disable object-shorthand */
+const { ObjectId } = require('mongodb');
 const fs = require('fs');
 const { Usuario } = require('../models');
 
@@ -13,8 +14,8 @@ async function editarUsuario(body) {
 }
 
 async function eliminarUsuario(id) {
-  const EliminarUsuario = await Usuario.deleteOne({ _id: id });
-  return EliminarUsuario;
+  const usuarioBorrado = await Usuario.findByIdAndDelete(new ObjectId(id));
+  return usuarioBorrado;
 }
 
 module.exports = {
