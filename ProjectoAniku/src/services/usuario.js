@@ -3,14 +3,14 @@ const { ObjectId } = require('mongodb');
 const fs = require('fs');
 const { Usuario } = require('../models');
 
-async function crearUsuario(user) {
-  return new Usuario(user).save();
+async function crearUsuario(body) {
+  return new Usuario(body).save();
 }
 
 async function editarUsuario(body) {
-  const { id, ...datos } = body;
-  const updatedUser = await Usuario.findOneAndUpdate({ id }, datos);
-  return updatedUser;
+  const { telephone, ...datos } = body;
+  const usuarioEditado = await Usuario.findOneAndUpdate({ telephone }, datos);
+  return usuarioEditado;
 }
 
 async function eliminarUsuario(id) {

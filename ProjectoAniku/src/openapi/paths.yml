@@ -17,14 +17,14 @@
             application/json:
               schema:
                 $ref: "#/components/schemas/PostUsuario"
-  "/usuarios/{id}":
+  "/usuarios/{telephone}":
     put:
       tags:
       - usuario
       summary: Editar usuario por ID
       description: Edita un usuario creado
       parameters:
-      - name: id
+      - name: telephone
         in: path
         description: Id del usuario
         required: true
@@ -43,6 +43,7 @@
             application/json:
               schema:
                 $ref: "#/components/schemas/Usuario"
+  "/usuarios/{id}":
     delete:
       tags:
       - usuario
@@ -60,7 +61,7 @@
             application/json:
               schema:
                 $ref: "#/components/schemas/DeleteUsuario"
-  "/publicacion/{_id}":
+  "/publicacion":
     post:
       tags:
       - publicacion

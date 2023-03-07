@@ -3,7 +3,7 @@ const { Publicacion } = require('../models');
 
 async function createPublicacion(publicationData, archivo) {
   const data = { ...publicationData, image: archivo.originalname };
-  const createdPublicacion = await Publicacion.create(data);
+  const createdPublicacion = await Publicacion.create(data).save();
   return createdPublicacion;
 }
 
