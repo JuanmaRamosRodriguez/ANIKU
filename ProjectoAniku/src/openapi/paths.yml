@@ -61,25 +61,6 @@
             application/json:
               schema:
                 $ref: "#/components/schemas/DeleteUsuario"
-  "/publicacion":
-    post:
-      tags:
-      - publicacion
-      summary: Crear publicación
-      description: Envía los datos para publicar 
-      requestBody:
-        description: Creación de publicación
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/PostPublicacion"
-      responses:
-        201:
-          description: Publicado con éxito
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/PostPublicacion"
   "/publicacion{id}":
     delete:
       tags:
