@@ -80,13 +80,14 @@
             application/json:
               schema:
                 $ref: "#/components/schemas/PostPublicacion"
+  "/publicacion{id}":
     delete:
       tags:
       - publicacion
       summary: Eliminar publicacion
       description: Eliminar la publicacion que quieras
       parameters:
-      - name: _id
+      - name: id
         in: path
         description: Id de la foto subida
         required: true
