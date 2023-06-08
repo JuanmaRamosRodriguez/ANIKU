@@ -8,7 +8,7 @@ Usuario:
     telephone:
       type: number
     password:
-      type: string   
+      type: string
 PutUsuario:
   type: object
   properties:
@@ -21,6 +21,17 @@ PutUsuario:
     password:
       type: string
 PostUsuario:
+  type: object
+  properties:
+    name:
+      type: string
+    email:
+      type: string
+    telephone:
+      type: number
+    password:
+      type: string
+PostLogin:
   type: object
   properties:
     name:

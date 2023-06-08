@@ -17,6 +17,25 @@
             application/json:
               schema:
                 $ref: "#/components/schemas/PostUsuario"
+  "/login":
+    post:
+      tags:
+      - login
+      summary: Iniciar Sesión
+      description: Envía los datos para iniciar sesión
+      requestBody:
+        description: Inicio de sesión
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PostLogin"
+      responses:
+        201:
+          description: Usuario creado correctamente
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PostUsuario"
   "/usuarios/{telephone}":
     put:
       tags:
