@@ -1,9 +1,7 @@
 const express = require('express');
-const { upload } = require('../middleware/multer');
-const { crearPublicacion, eliminarPublicacion } = require('../controllers/publicaciones');
+const { loginUser } = require('../controllers/login');
 
 const router = express.Router();
-router.post('', upload.single('fotos'), crearPublicacion);
-router.delete('/:id', eliminarPublicacion);
+router.post('/', loginUser);
 
 module.exports = router;
