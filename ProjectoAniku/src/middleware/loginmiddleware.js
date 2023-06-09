@@ -10,29 +10,23 @@ const loginMiddleware = async (req, res, next) => {
   const token1 = req.headers.authorization;
 
   if (token1 === undefined) {
-    return res.status(401).json({ message: 'No se proporcionó un token de autenticación.' });
+    return res.status(401).json({ message: 'No se proporcionó el token para autentificar.' });
   }
   const token = req.headers.authorization.substring(7);
 
   try {
-    // Verificar el token con la clave secreta
     const decodedToken = jwt.verify(token, secret);
 
-    // Buscar al usuario correspondiente al ID del token en la base de datos
     const usuarios = await Usuarios.findById(decodedToken.usuariosId);
 
-    // Si no se encontró ningún s con ese ID, devolver un error 401
     if (!usuarios) {
-      return res.status(401).json({ message: 'El usuario no está registrado.' });
+      return res.status(401).json({ message: 'Usuario no registrado.' });
     }
 
-    // Adjuntar el usuario al objeto de la solicitud para que los controladores puedan utilizarlo
     req.usuarios = usuarios;
 
-    // Llamar a la siguiente función en la cadena de middlewares
     return next();
   } catch (err) {
-    // Si el token no es válido, devolver un error 401
     return res.status(401).send({ message: 'El token de autenticación no es válido.' });
   }
 };

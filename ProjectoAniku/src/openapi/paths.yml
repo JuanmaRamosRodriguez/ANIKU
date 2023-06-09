@@ -28,7 +28,7 @@
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/PostLogin"
+              $ref: "#/components/schemas/Login"
       responses:
         201:
           description: Usuario creado correctamente
