@@ -31,15 +31,11 @@ PostUsuario:
       type: number
     password:
       type: string
-PostLogin:
+Login:
   type: object
   properties:
-    name:
-      type: string
     email:
       type: string
-    telephone:
-      type: number
     password:
       type: string
 DeleteUsuario:
